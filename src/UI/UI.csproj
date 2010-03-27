@@ -8,8 +8,8 @@
     <ProjectTypeGuids>{F85E285D-A4E0-4152-9332-AB1D724D3325};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>UI</RootNamespace>
-    <AssemblyName>UI</AssemblyName>
+    <RootNamespace>MongoBlog.UI</RootNamespace>
+    <AssemblyName>MongoBlog.UI</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
   </PropertyGroup>
@@ -61,6 +61,8 @@
     <Reference Include="System.Web.Mobile" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Domain\Entities\Post.cs" />
+    <Compile Include="Domain\Services\IRepository.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -68,7 +70,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
-    <Content Include="content\css\Site.css" />
+    <Content Include="content\css\master.css" />
     <Content Include="Web.config" />
     <Content Include="content\js\jquery-1.4.1.js" />
     <Content Include="content\js\jquery-1.4.1.min.js" />
@@ -87,7 +89,9 @@
     <Content Include="Views\Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Code\" />
+    <Folder Include="DependencyInjection\" />
+    <Folder Include="Infrastructure\DataAccess\" />
+    <Folder Include="Presentation\" />
     <Folder Include="Views\Shared\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
