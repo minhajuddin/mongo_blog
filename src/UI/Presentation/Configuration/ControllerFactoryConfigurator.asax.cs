@@ -1,5 +1,4 @@
 ﻿using System.Web.Mvc;
-using SchoolPilot.UI.Code.Configuration;
 
 namespace MongoBlog.UI.Presentation.Configuration {
     public class ControllerFactoryConfigurator : IConfigurator {

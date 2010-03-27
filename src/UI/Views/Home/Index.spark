@@ -1,2 +1,6 @@
-<viewdata model='object' />
+<viewdata model='System.Collections.Generic.IEnumerable<MongoBlog.UI.Domain.Entities.Post>' />
 <h1>Welcome to Mongo Blog</h1>
+
+<for each='var p in Model'>
+	<p>${p.Title}</p>
+</for>

@@ -85,10 +85,12 @@
     <Compile Include="Domain\Entities\IEntity.cs" />
     <Compile Include="Domain\Entities\Post.cs" />
     <Compile Include="Domain\Services\IUserRepository.cs" />
+    <Compile Include="Infrastructure\DataAccess\PostRepository.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Infrastructure\DataAccess\IMongoFactory.cs" />
+    <Compile Include="Infrastructure\DataAccess\Repository.cs" />
     <Compile Include="Presentation\ApplicationView.cs" />
     <Compile Include="Presentation\Configuration\ControllerFactoryConfigurator.asax.cs" />
     <Compile Include="Presentation\Configuration\IConfigurator.cs" />
@@ -96,7 +98,10 @@
     <Compile Include="Presentation\Configuration\SparkConfiguration.cs" />
     <Compile Include="Presentation\Configuration\StructureMapControllerFactory.asax.cs" />
     <Compile Include="Presentation\Configuration\UiRegistry.cs" />
+    <Compile Include="Presentation\ApplicationController.cs" />
     <Compile Include="Presentation\Controllers\HomeController.cs" />
+    <Compile Include="Domain\Services\IPostRepository.cs" />
+    <Compile Include="Domain\Entities\ISelectSpec.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

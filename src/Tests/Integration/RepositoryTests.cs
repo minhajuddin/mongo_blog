@@ -2,7 +2,6 @@ using MongoBlog.UI.Domain.Entities;
 using MongoBlog.UI.Domain.Services;
 using MongoBlog.UI.Infrastructure.DataAccess;
 using Norm;
-using Norm.Linq;
 using Xunit;
 using System;
 
@@ -38,30 +37,5 @@ namespace MongoBlog.Tests.Integration {
             Assert.NotNull(post);
         }
 
-    }
-
-    public class Repository : IRepository {
-
-        protected readonly IMongoFactory _mongoFactory;
-
-        public Repository(IMongoFactory mongoFactory) {
-            _mongoFactory = mongoFactory;
-        }
-
-        protected Mongo Connection() {
-            return _mongoFactory.CreateInstance();
-        }
-
-        public void Add<T>(T entity) {
-            using (var mongo = Connection()) {
-                mongo.GetCollection<T>().Insert(entity);
-            }
-
-        }
-
-        public T Get<T>(object id) {
-            var provider = new MongoQueryProvider(_mongoFactory.CreateInstance());
-            return provider.DB.GetCollection<T>().FindOne(new { Id = id });
-        }
     }
 }

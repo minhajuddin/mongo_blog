@@ -1,6 +1,5 @@
 using System.Web.Mvc;
 using System.Web.Routing;
-using SchoolPilot.UI.Code.Configuration;
 
 
 namespace MongoBlog.UI.Presentation.Configuration {

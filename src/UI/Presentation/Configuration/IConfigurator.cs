@@ -1,4 +1,4 @@
-namespace SchoolPilot.UI.Code.Configuration {
+namespace MongoBlog.UI.Presentation.Configuration {
     public interface IConfigurator {
         void Configure();
     }

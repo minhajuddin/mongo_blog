@@ -1,6 +1,5 @@
 using System.Web.Mvc;
 using MongoBlog.UI.Presentation.Controllers;
-using SchoolPilot.UI.Code.Configuration;
 using Spark;
 using Spark.Web.Mvc;
 
