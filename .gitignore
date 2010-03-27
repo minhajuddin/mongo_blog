@@ -1,0 +1,7 @@
+build
+*.mdf
+*.ldf
+~*
+myutil.sh
+results
+src/CommonAssemblyInfo.cs
