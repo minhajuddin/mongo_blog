@@ -31,6 +31,26 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Cosmicvent.FluentAuthentication, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\cosmicvent.libraries\Cosmicvent.FluentAuthentication.dll</HintPath>
+    </Reference>
+    <Reference Include="Norm, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\mongodb\Norm.dll</HintPath>
+    </Reference>
+    <Reference Include="Spark, Version=1.1.0.0, Culture=neutral, PublicKeyToken=7f8549eed921a12c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\spark\Spark.dll</HintPath>
+    </Reference>
+    <Reference Include="Spark.Web.Mvc, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\spark\Spark.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="StructureMap, Version=2.6.1.0, Culture=neutral, PublicKeyToken=e60ad81abae3c223, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\structuremap\StructureMap.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.ComponentModel.DataAnnotations">
@@ -61,12 +81,22 @@
     <Reference Include="System.Web.Mobile" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DependencyResolution\ServiceLocator.cs" />
     <Compile Include="Domain\Entities\IEntity.cs" />
     <Compile Include="Domain\Entities\Post.cs" />
-    <Compile Include="Domain\Services\IRepository.cs" />
+    <Compile Include="Domain\Services\IUserRepository.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Infrastructure\DataAccess\IMongoFactory.cs" />
+    <Compile Include="Presentation\ApplicationView.cs" />
+    <Compile Include="Presentation\Configuration\ControllerFactoryConfigurator.asax.cs" />
+    <Compile Include="Presentation\Configuration\IConfigurator.cs" />
+    <Compile Include="Presentation\Configuration\RouteConfigurator.cs" />
+    <Compile Include="Presentation\Configuration\SparkConfiguration.cs" />
+    <Compile Include="Presentation\Configuration\StructureMapControllerFactory.asax.cs" />
+    <Compile Include="Presentation\Configuration\UiRegistry.cs" />
+    <Compile Include="Presentation\Controllers\HomeController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -90,9 +120,9 @@
     <Content Include="Views\Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="DependencyInjection\" />
-    <Folder Include="Infrastructure\DataAccess\" />
-    <Folder Include="Presentation\" />
+    <None Include="Views\Home\Index.spark" />
+  </ItemGroup>
+  <ItemGroup>
     <Folder Include="Views\Shared\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
