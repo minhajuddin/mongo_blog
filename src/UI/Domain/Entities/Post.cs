@@ -1,7 +1,7 @@
 using System;
 
 namespace MongoBlog.UI.Domain.Entities {
-    public class Post {
+    public class Post : IEntity {
 
         public Guid Id { get; set; }
         public string Title { get; set; }

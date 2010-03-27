@@ -61,6 +61,7 @@
     <Reference Include="System.Web.Mobile" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Domain\Entities\IEntity.cs" />
     <Compile Include="Domain\Entities\Post.cs" />
     <Compile Include="Domain\Services\IRepository.cs" />
     <Compile Include="Global.asax.cs">
