@@ -27,5 +27,10 @@ namespace MongoBlog.UI.Presentation.Controllers {
             FormsAuthentication.RedirectFromLoginPage(form.UserName, false);
             return RedirectToAction("Index", "Posts");
         }
+
+        public ActionResult LogOff() {
+            FormsAuthentication.SignOut();
+            return RedirectToAction("Index", "Posts");
+        }
     }
 }
