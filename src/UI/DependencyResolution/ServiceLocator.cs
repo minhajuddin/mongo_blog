@@ -21,5 +21,9 @@ namespace MongoBlog.UI.DependencyResolution {
         public static object GetInstance(Type type) {
             return ObjectFactory.GetInstance(type);
         }
+
+        public static T GetInstance<T>() {
+            return (T)GetInstance(typeof(T));
+        }
     }
 }

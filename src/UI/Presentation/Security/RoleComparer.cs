@@ -1,11 +1,12 @@
-using System;
 using Cosmicvent.FluentAuthentication;
+using MongoBlog.UI.Domain.Entities;
 
-namespace MongoBlog.UI.Presentation.Security
-{
+namespace MongoBlog.UI.Presentation.Security {
     public class RoleComparer : IRoleComparer {
         public bool AreEqual(object firstRole, object secondRole) {
-            throw new NotImplementedException();
+            var first = (Role)firstRole;
+            var second = (Role)secondRole;
+            return first == second;
         }
     }
 }
