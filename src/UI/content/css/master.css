@@ -11,3 +11,7 @@ body { background-color: #ddd; font-family: "Cambria" , "Georgia" , "Times New R
 #logo { float: left; width: 500px; }
 #dashboard { float: right; }
 
+#menu ul { list-style: none; }
+#menu li { display: inline; }
+#menu li a { padding: 5px 10px; background-color: #48502C; color: #919878; text-decoration: none; }
+#menu { margin: 8px 0px; }

@@ -1,3 +1,4 @@
+using System;
 using MongoBlog.Web.Infrastructure.DataAccess;
 using MongoBlog.Web.Domain.Entities;
 namespace MongoBlog.IntegrationTests.Infrastructure {
@@ -13,6 +14,7 @@ namespace MongoBlog.IntegrationTests.Infrastructure {
 
             _sessionFactory.GetSession().Drop<Post>();
             _sessionFactory.GetSession().Drop<User>();
+            new SeedTestData().Seed(_sessionFactory.GetSession());
         }
 
 

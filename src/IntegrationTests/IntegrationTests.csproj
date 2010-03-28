@@ -54,6 +54,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Infrastructure\DatabaseTest.cs" />
+    <Compile Include="Infrastructure\SeedTestData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Infrastructure\RepositoryTests.cs" />
   </ItemGroup>

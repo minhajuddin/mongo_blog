@@ -1,0 +1,12 @@
+<div id='menu'>
+	<ul>
+		<li><a href='${Url.Action("Index", "Posts")}'>Home</a></li>
+		<if condition='IsAuthenticated == true'>
+			<li><a href='${Url.Action("Create", "Posts")}'>Create A Post</a></li>			<!-- this should be shown only to admins -->
+			<li><a href='${Url.Action("LogOff", "Accounts")}'>Log Off</a></li>
+		</if>
+		<else>
+			<li><a href='${Url.Action("LogOn", "Accounts")}'>Log On</a></li>
+		</else>
+	</ul>
+</div>

@@ -149,6 +149,7 @@
     <None Include="Views\posts\details.spark" />
     <None Include="Views\posts\index.spark" />
     <None Include="Views\shared\_global.spark" />
+    <None Include="Views\shared\_Navbar.spark" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v9.0\WebApplications\Microsoft.WebApplication.targets" />

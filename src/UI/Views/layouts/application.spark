@@ -16,6 +16,7 @@
 		</div>
 		<div style='clear:both;'></div>
 	</div>
+	<Navbar IsAuthenticated='Request.IsAuthenticated'/>
 	<div id='messages'>
 		${TempData["error"]}
 	</div>
