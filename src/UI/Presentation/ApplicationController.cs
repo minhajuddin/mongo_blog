@@ -2,14 +2,12 @@ using System.Web.Mvc;
 using MongoBlog.UI.DependencyResolution;
 using Cosmicvent.FluentAuthentication;
 using MongoBlog.UI.Domain.Entities;
+using MongoBlog.UI.Domain.Services;
 
 namespace MongoBlog.UI.Presentation {
     public abstract class ApplicationController : Controller {
 
-        protected override void Initialize(System.Web.Routing.RequestContext requestContext) {
-            base.Initialize(requestContext);
-
-        }
+        User _currentUser;
 
         protected override void OnAuthorization(AuthorizationContext filterContext) {
             IAuthenticationSettings settings = ServiceLocator.GetInstance<IAuthenticationSettings>();
@@ -43,7 +41,13 @@ namespace MongoBlog.UI.Presentation {
 
         protected User CurrentUser {
             get {
-                return new User { Role = Role.Admin };
+                if (_currentUser != null) {
+                    return _currentUser;
+                }
+
+                var session = ServiceLocator.GetInstance<IUserSession>();
+                _currentUser = session.GetCurrentUser();
+                return _currentUser;
             }
         }
     }

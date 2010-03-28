@@ -87,6 +87,7 @@
     <Compile Include="Domain\Entities\Role.cs" />
     <Compile Include="Domain\Services\IRepository.cs" />
     <Compile Include="Domain\Entities\User.cs" />
+    <Compile Include="Domain\Services\IUserSession.cs" />
     <Compile Include="Infrastructure\DataAccess\PostRepository.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -99,6 +100,7 @@
     <Compile Include="Presentation\Configuration\IConfigurator.cs" />
     <Compile Include="Presentation\Controllers\AccountsController.cs" />
     <Compile Include="Domain\Services\IUserRepository.cs" />
+    <Compile Include="Presentation\Services\UserSession.cs" />
     <Compile Include="Presentation\ViewModels\LogonForm.cs" />
     <Compile Include="Presentation\Security\MongoBlogAuthenticationSettings.cs" />
     <Compile Include="Presentation\Security\RoleComparer.cs" />
