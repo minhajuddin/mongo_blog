@@ -7,6 +7,7 @@ namespace MongoBlog.IntegrationTests.Infrastructure {
 
         public DatabaseTest() {
             //reset the data
+            new MongoConfigurator().Configure();
             _mongoFactory = new MongoFactory();
             _sessionFactory = new SessionFactory(_mongoFactory);
 

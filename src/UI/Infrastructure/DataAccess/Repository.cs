@@ -1,6 +1,6 @@
+using System;
 using MongoBlog.Web.Domain.Services;
 using Norm;
-using Norm.Linq;
 
 namespace MongoBlog.Web.Infrastructure.DataAccess {
     public class Repository : IRepository {
@@ -11,17 +11,19 @@ namespace MongoBlog.Web.Infrastructure.DataAccess {
         }
 
         public void Create<T>(T entity) where T : class, new() {
-            using (ISession session = _sessionFactory.GetSession()) {
-                session.Add(entity);
-            }
+            WithinSession(session => session.Add(entity));
         }
 
         public T Get<T>(ObjectId id) where T : class, new() {
-            using (var session = _sessionFactory.GetSession()) {
-                return session.Get<T>(id);
-            }
+            T entity = null;
+            WithinSession(s => entity = s.Get<T>(id));
+            return entity;
         }
 
-        
+        public void WithinSession(Action<ISession> action) {
+            using (var session = _sessionFactory.GetSession()) {
+                action(session);
+            }
+        }
     }
 }

@@ -9,10 +9,9 @@ namespace MongoBlog.IntegrationTests.Infrastructure {
     public class RepositoryTests : DatabaseTest {
 
 
-
         [Fact]
         public void Add_adds_an_entity_to_the_db() {
-            IRepository repo = new Repository(new MongoFactory());
+            IRepository repo = new Repository(_sessionFactory);
 
             var post = new Post
                            {
@@ -24,8 +23,6 @@ namespace MongoBlog.IntegrationTests.Infrastructure {
 
             repo.Create(post);
 
-            Console.WriteLine(post.Id);
-
             var savedPost = repo.Get<Post>(post.Id);
 
             Assert.NotNull(savedPost);
@@ -34,11 +31,17 @@ namespace MongoBlog.IntegrationTests.Infrastructure {
 
         [Fact]
         public void Get_retrieves_existing_data() {
-            
-            var repo = new Repository(_mongoFactory);
+            var savedPost = new Post { Id = ObjectId.NewObjectId(), Title = "Test blog" };
 
-            var post = repo.Get<Post>(new ObjectId("aee42504b9bc429415000000"));
+            using (var session = _sessionFactory.GetSession()) {
+                session.Add(savedPost);
+            }
+
+            var repo = new Repository(_sessionFactory);
+
+            var post = repo.Get<Post>(savedPost.Id);
             Assert.NotNull(post);
+            Assert.Equal(post.Title, savedPost.Title);
         }
 
     }

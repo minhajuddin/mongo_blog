@@ -88,6 +88,7 @@
     <Compile Include="Domain\Services\IRepository.cs" />
     <Compile Include="Domain\Entities\User.cs" />
     <Compile Include="Domain\Services\IUserSession.cs" />
+    <Compile Include="Infrastructure\DataAccess\ISession.cs" />
     <Compile Include="Infrastructure\DataAccess\MongoConfigurator.cs" />
     <Compile Include="Infrastructure\DataAccess\PostRepository.cs" />
     <Compile Include="Global.asax.cs">

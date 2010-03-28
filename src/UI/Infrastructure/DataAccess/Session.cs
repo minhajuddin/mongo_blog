@@ -1,4 +1,3 @@
-using System;
 using System.Linq;
 using Norm;
 using Norm.Collections;
@@ -22,7 +21,7 @@ namespace MongoBlog.Web.Infrastructure.DataAccess {
         }
 
         public T Get<T>(ObjectId id) {
-            return GetCollection<T>().FindOne(id);
+            return GetCollection<T>().FindOne(new { Id = id });
         }
 
         protected MongoCollection<T> GetCollection<T>() {
@@ -44,16 +43,5 @@ namespace MongoBlog.Web.Infrastructure.DataAccess {
         public void Dispose() {
             _provider.Server.Dispose();
         }
-    }
-
-    public interface ISession : IDisposable {
-        MongoQueryProvider Provider { get; }
-        IQueryable<T> GetQueryable<T>();
-
-        void Add<T>(T item) where T : class, new();
-        void Update<T>(T item) where T : class, new();
-
-        void Drop<T>();
-        T Get<T>(ObjectId id);
     }
 }
