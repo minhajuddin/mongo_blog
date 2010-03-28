@@ -1,13 +1,10 @@
-namespace MongoBlog.UI.Domain.Entities {
+namespace MongoBlog.Web.Domain.Entities {
     public interface ISelectSpec {
         int NumberOfRows { get; }
         int SkipRows { get; }
     }
 
     public class SelectSpec : ISelectSpec {
-        public int NumberOfRows { get; protected set; }
-        public int SkipRows { get; protected set; }
-
         public SelectSpec(int numberOfRows)
             : this(numberOfRows, 0) {
         }
@@ -18,9 +15,10 @@ namespace MongoBlog.UI.Domain.Entities {
         }
 
         public static ISelectSpec Default {
-            get {
-                return new SelectSpec(25);
-            }
+            get { return new SelectSpec(25); }
         }
+
+        public int NumberOfRows { get; protected set; }
+        public int SkipRows { get; protected set; }
     }
 }

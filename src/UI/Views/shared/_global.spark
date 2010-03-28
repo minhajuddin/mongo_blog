@@ -1,5 +1,5 @@
-<use namespace='MongoBlog.UI.Domain.Entities' />
+<use namespace='MongoBlog.Web.Domain.Entities' />
 <use namespace='System.Collections.Generic' />
-<use namespace='MongoBlog.UI.Presentation.ViewModels' />
+<use namespace='MongoBlog.Web.Presentation.ViewModels' />
 <use namespace='System.Web.Mvc' />
 <use namespace='System.Web.Mvc.Html' />

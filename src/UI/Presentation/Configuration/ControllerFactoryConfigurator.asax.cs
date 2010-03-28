@@ -1,6 +1,7 @@
 ﻿using System.Web.Mvc;
+using MongoBlog.Web.Domain;
 
-namespace MongoBlog.UI.Presentation.Configuration {
+namespace MongoBlog.Web.Presentation.Configuration {
     public class ControllerFactoryConfigurator : IConfigurator {
         private readonly ControllerBuilder _controllerBuilder;
 
@@ -11,5 +12,6 @@ namespace MongoBlog.UI.Presentation.Configuration {
         public void Configure() {
             _controllerBuilder.SetControllerFactory(new StructureMapControllerFactory());
         }
+
     }
 }

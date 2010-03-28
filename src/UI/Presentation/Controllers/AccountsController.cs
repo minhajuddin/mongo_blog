@@ -1,10 +1,10 @@
 using System.Web.Mvc;
-using MongoBlog.UI.Domain.Entities;
-using MongoBlog.UI.Domain.Services;
-using MongoBlog.UI.Presentation.ViewModels;
 using System.Web.Security;
+using MongoBlog.Web.Domain.Entities;
+using MongoBlog.Web.Domain.Services;
+using MongoBlog.Web.Presentation.ViewModels;
 
-namespace MongoBlog.UI.Presentation.Controllers {
+namespace MongoBlog.Web.Presentation.Controllers {
     public class AccountsController : ApplicationController {
         private readonly IUserRepository _repository;
 

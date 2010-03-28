@@ -1,12 +1,12 @@
-using System.Web.Mvc;
-using MongoBlog.UI.Domain.Services;
-using MongoBlog.UI.Domain.Entities;
-using MongoBlog.UI.Presentation.ViewModels;
 using System;
+using System.Collections.Generic;
+using System.Web.Mvc;
+using MongoBlog.Web.Domain.Entities;
+using MongoBlog.Web.Domain.Services;
+using MongoBlog.Web.Presentation.ViewModels;
 using Norm;
 
-namespace MongoBlog.UI.Presentation.Controllers {
-
+namespace MongoBlog.Web.Presentation.Controllers {
     public class PostsController : ApplicationController {
         private readonly IPostRepository _postRepository;
 
@@ -15,7 +15,7 @@ namespace MongoBlog.UI.Presentation.Controllers {
         }
 
         public ActionResult Index() {
-            var posts = _postRepository.GetAll(SelectSpec.Default);
+            IEnumerable<Post> posts = _postRepository.GetAll(SelectSpec.Default);
             return View(posts);
         }
 
@@ -41,6 +41,5 @@ namespace MongoBlog.UI.Presentation.Controllers {
             var post = _postRepository.Get<Post>(new ObjectId(id));
             return View(post);
         }
-
     }
 }

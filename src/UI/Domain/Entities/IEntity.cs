@@ -1,4 +1,4 @@
-namespace MongoBlog.UI.Domain.Entities {
+namespace MongoBlog.Web.Domain.Entities {
     public interface IEntity {
     }
 }

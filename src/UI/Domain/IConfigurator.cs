@@ -1,4 +1,4 @@
-namespace MongoBlog.UI.Presentation.Configuration {
+namespace MongoBlog.Web.Domain {
     public interface IConfigurator {
         void Configure();
     }

@@ -1,19 +1,20 @@
-﻿using System.Web.Mvc;
+﻿using System.Web;
+using System.Web.Mvc;
 using System.Web.Routing;
-using MongoBlog.UI.Presentation.Configuration;
-using MongoBlog.UI.DependencyResolution;
+using MongoBlog.Web.DependencyResolution;
+using MongoBlog.Web.Presentation.Configuration;
+using MongoBlog.Web.Infrastructure.DataAccess;
 
-namespace MongoBlog.UI {
-    public class MvcApplication : System.Web.HttpApplication {
-
+namespace MongoBlog.Web {
+    public class MvcApplication : HttpApplication {
         protected void Application_Start() {
             AreaRegistration.RegisterAllAreas();
 
-            ServiceLocator.RegisterDependencies();
-            new RouteConfigurator(RouteTable.Routes).Configure();//configure routes
-            new SparkConfigurator(ViewEngines.Engines).Configure();//configure spark
-            new ControllerFactoryConfigurator(ControllerBuilder.Current).Configure();//configure controller factory
-
+            ServiceLocator.EnsureDependenciesRegistered();
+            new MongoConfigurator().Configure();
+            new RouteConfigurator(RouteTable.Routes).Configure(); //configure routes
+            new SparkConfigurator(ViewEngines.Engines).Configure(); //configure spark
+            new ControllerFactoryConfigurator(ControllerBuilder.Current).Configure(); //configure controller factory
         }
     }
 }

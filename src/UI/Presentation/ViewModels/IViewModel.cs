@@ -1,5 +1,4 @@
-namespace MongoBlog.UI.Presentation.ViewModels
-{
+namespace MongoBlog.Web.Presentation.ViewModels {
     public interface IViewModel {
     }
 }

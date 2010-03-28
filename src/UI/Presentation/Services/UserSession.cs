@@ -1,10 +1,9 @@
-using System;
 using System.Security.Principal;
-using MongoBlog.UI.Domain.Entities;
-using MongoBlog.UI.Domain.Services;
 using System.Web;
+using MongoBlog.Web.Domain.Entities;
+using MongoBlog.Web.Domain.Services;
 
-namespace MongoBlog.UI.Presentation.Services {
+namespace MongoBlog.Web.Presentation.Services {
     public class UserSession : IUserSession {
         private readonly IUserRepository _repository;
 
@@ -22,5 +21,6 @@ namespace MongoBlog.UI.Presentation.Services {
 
             return null;
         }
+
     }
 }

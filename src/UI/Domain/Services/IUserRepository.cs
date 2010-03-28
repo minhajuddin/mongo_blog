@@ -1,6 +1,6 @@
-using MongoBlog.UI.Domain.Entities;
+using MongoBlog.Web.Domain.Entities;
 
-namespace MongoBlog.UI.Domain.Services {
+namespace MongoBlog.Web.Domain.Services {
     public interface IUserRepository : IRepository {
         User GetByUserName(string username);
     }

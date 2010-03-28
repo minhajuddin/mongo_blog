@@ -1,8 +1,8 @@
 using Cosmicvent.FluentAuthentication;
-using MongoBlog.UI.Domain.Entities;
-using MongoBlog.UI.Presentation.Controllers;
+using MongoBlog.Web.Domain.Entities;
+using MongoBlog.Web.Presentation.Controllers;
 
-namespace MongoBlog.UI.Presentation.Security {
+namespace MongoBlog.Web.Presentation.Security {
     public class MongoBlogAuthenticationSettings : AuthenticationSettings {
         public MongoBlogAuthenticationSettings()
             : base(new RoleComparer()) {
@@ -10,9 +10,8 @@ namespace MongoBlog.UI.Presentation.Security {
 
         protected override void Configure() {
             AddRule<PostsController>()
-                   .AddAction(x => x.Create())
-                   .AddRole(Role.Admin);
+                .AddAction(x => x.Create())
+                .AddRole(Role.Admin);
         }
-
     }
 }

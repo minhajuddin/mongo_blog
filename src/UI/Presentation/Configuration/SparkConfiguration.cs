@@ -1,9 +1,9 @@
 using System.Web.Mvc;
-using MongoBlog.UI.Presentation.Controllers;
+using MongoBlog.Web.Domain;
 using Spark;
 using Spark.Web.Mvc;
 
-namespace MongoBlog.UI.Presentation.Configuration {
+namespace MongoBlog.Web.Presentation.Configuration {
     public class SparkConfigurator : IConfigurator {
         private readonly ViewEngineCollection _engines;
 

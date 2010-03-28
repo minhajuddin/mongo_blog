@@ -1,17 +1,18 @@
 using System.Collections.Generic;
 using System.Linq;
-using MongoBlog.UI.Domain.Entities;
-using MongoBlog.UI.Domain.Services;
+using MongoBlog.Web.Domain.Entities;
+using MongoBlog.Web.Domain.Services;
+using Norm;
 using Norm.Linq;
 
-namespace MongoBlog.UI.Infrastructure.DataAccess {
+namespace MongoBlog.Web.Infrastructure.DataAccess {
     public class PostRepository : Repository, IPostRepository {
-        public PostRepository(IMongoFactory mongoFactory)
+        public PostRepository(IMongoFactory mongoFactory, ISession session)
             : base(mongoFactory) {
         }
 
         public IEnumerable<Post> GetAll(ISelectSpec selectSpec) {
-            using (var connection = Connection()) {
+            using (Mongo connection = Connection()) {
                 var posts = new MongoQuery<Post>(new MongoQueryProvider(connection));
                 return posts.Take(selectSpec.NumberOfRows).Skip(selectSpec.SkipRows).ToList();
             }

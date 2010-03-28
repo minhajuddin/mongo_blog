@@ -1,14 +1,26 @@
 using System;
+using MongoBlog.Web.Domain.Entities;
 using StructureMap;
-using MongoBlog.UI.Domain.Entities;
 
-namespace MongoBlog.UI.DependencyResolution {
-    public static class ServiceLocator {
-        private static object _sync = new object();
+namespace MongoBlog.Web.DependencyResolution {
+    public class ServiceLocator {
+        private static readonly object _sync = new object();
+        private static bool _isRegistered;
+
+        public static void EnsureDependenciesRegistered() {
+            if (_isRegistered) {
+                return;
+            }
 
 
+            lock (_sync) {
+                new ServiceLocator().RegisterDependencies();
+                _isRegistered = true;
+            }
+        }
 
-        public static void RegisterDependencies() {
+
+        public void RegisterDependencies() {
             ObjectFactory.Initialize(x => x.Scan(s =>
                                                      {
                                                          s.AssemblyContainingType<IEntity>();

@@ -1,10 +1,11 @@
 using System;
 using System.Web.Mvc;
-using MongoBlog.UI.DependencyResolution;
+using System.Web.Routing;
+using MongoBlog.Web.DependencyResolution;
 
-namespace MongoBlog.UI.Presentation.Configuration {
+namespace MongoBlog.Web.Presentation.Configuration {
     public class StructureMapControllerFactory : DefaultControllerFactory {
-        protected override IController GetControllerInstance(System.Web.Routing.RequestContext requestContext, Type controllerType) {
+        protected override IController GetControllerInstance(RequestContext requestContext, Type controllerType) {
             //TODO:this should have some logging and error checking
             return (IController)ServiceLocator.GetInstance(controllerType);
         }

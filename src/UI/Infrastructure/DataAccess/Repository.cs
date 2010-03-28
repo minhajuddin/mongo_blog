@@ -1,32 +1,27 @@
-using MongoBlog.UI.Domain.Services;
+using MongoBlog.Web.Domain.Services;
 using Norm;
 using Norm.Linq;
 
-namespace MongoBlog.UI.Infrastructure.DataAccess {
+namespace MongoBlog.Web.Infrastructure.DataAccess {
     public class Repository : IRepository {
+        protected readonly ISessionFactory _sessionFactory;
 
-        protected readonly IMongoFactory _mongoFactory;
-
-        public Repository(IMongoFactory mongoFactory) {
-            _mongoFactory = mongoFactory;
+        public Repository(ISessionFactory sessionFactory) {
+            _sessionFactory = sessionFactory;
         }
 
-        protected Mongo Connection() {
-            return _mongoFactory.CreateInstance();
-        }
-
-        public void Create<T>(T entity) {
-            using (var mongo = Connection()) {
-                mongo.GetCollection<T>().Insert(entity);
+        public void Create<T>(T entity) where T : class, new() {
+            using (ISession session = _sessionFactory.GetSession()) {
+                session.Add(entity);
             }
-
         }
 
-        public T Get<T>(object id) {
-            var provider = new MongoQueryProvider(_mongoFactory.CreateInstance());
-            T entity = provider.DB.GetCollection<T>().FindOne(new { Id = id });
-            provider.Server.Dispose();
-            return entity;
+        public T Get<T>(ObjectId id) where T : class, new() {
+            using (var session = _sessionFactory.GetSession()) {
+                return session.Get<T>(id);
+            }
         }
+
+        
     }
 }

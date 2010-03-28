@@ -8,8 +8,8 @@
     <ProjectGuid>{FF7C4B6B-7362-45D6-81E9-72341155EE60}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>MongoBlog.Tests</RootNamespace>
-    <AssemblyName>MongoBlog.Tests</AssemblyName>
+    <RootNamespace>MongoBlog.UnitTests</RootNamespace>
+    <AssemblyName>MongoBlog.UnitTests</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -53,17 +53,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Integration\RepositoryTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\UI\UI.csproj">
+    <ProjectReference Include="..\UI\Web.csproj">
       <Project>{617F54F8-A7B6-46FE-BA2E-122E01BA3BB1}</Project>
-      <Name>UI</Name>
+      <Name>Web</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Unit\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

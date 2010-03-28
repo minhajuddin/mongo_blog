@@ -8,8 +8,8 @@
     <ProjectTypeGuids>{F85E285D-A4E0-4152-9332-AB1D724D3325};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>MongoBlog.UI</RootNamespace>
-    <AssemblyName>MongoBlog.UI</AssemblyName>
+    <RootNamespace>MongoBlog.Web</RootNamespace>
+    <AssemblyName>MongoBlog.Web</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
   </PropertyGroup>
@@ -88,16 +88,20 @@
     <Compile Include="Domain\Services\IRepository.cs" />
     <Compile Include="Domain\Entities\User.cs" />
     <Compile Include="Domain\Services\IUserSession.cs" />
+    <Compile Include="Infrastructure\DataAccess\MongoConfigurator.cs" />
     <Compile Include="Infrastructure\DataAccess\PostRepository.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Infrastructure\DataAccess\IMongoFactory.cs" />
     <Compile Include="Infrastructure\DataAccess\Repository.cs" />
+    <Compile Include="Infrastructure\DataAccess\Session.cs" />
+    <Compile Include="Infrastructure\DataAccess\SessionFactory.cs" />
     <Compile Include="Infrastructure\DataAccess\UserRepository.cs" />
+    <Compile Include="Infrastructure\InfrastructureRegistry.cs" />
     <Compile Include="Presentation\ApplicationView.cs" />
     <Compile Include="Presentation\Configuration\ControllerFactoryConfigurator.asax.cs" />
-    <Compile Include="Presentation\Configuration\IConfigurator.cs" />
+    <Compile Include="Domain\IConfigurator.cs" />
     <Compile Include="Presentation\Controllers\AccountsController.cs" />
     <Compile Include="Domain\Services\IUserRepository.cs" />
     <Compile Include="Presentation\Services\UserSession.cs" />
