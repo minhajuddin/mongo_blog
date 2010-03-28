@@ -2,20 +2,29 @@
 <global title='"Mongo DB Blog"' type='string' />
 <html xmlns="http://www.w3.org/1999/xhtml" >
 <head>
+	<link href="/content/css/master.css" rel="stylesheet" type="text/css" />
     <title>${title}</title>
 </head>
 <body>
+<div id='wrapper'>
 	<div id='header'>
-		Mongo DB Blog | ${this.ViewContext.HttpContext.User.Identity.Name}
+		<div id='logo'>
+			<h1>Mongo DB Blog</h1>
+		</div> 
+		<div id='dashboard'>
+			${this.ViewContext.HttpContext.User.Identity.Name}
+		</div>
+		<div style='clear:both;'></div>
 	</div>
 	<div id='messages'>
 		${TempData["error"]}
 	</div>
-    <div id='page'>
+    <div id='content'>
 		<use:view />
     </div>
     <div id='footer'>
 		Mongo DB Blog &copy; 2010
 	</div>
+</div>
 </body>
 </html>

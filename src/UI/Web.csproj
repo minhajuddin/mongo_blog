@@ -124,6 +124,7 @@
   <ItemGroup>
     <Content Include="Global.asax" />
     <Content Include="content\css\master.css" />
+    <Content Include="Views\shared\test.aspx" />
     <Content Include="Web.config" />
     <Content Include="content\js\jquery-1.4.1.js" />
     <Content Include="content\js\jquery-1.4.1.min.js" />

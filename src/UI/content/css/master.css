@@ -1,28 +1,13 @@
-/* Styles for validation helpers
------------------------------------------------------------*/
-.field-validation-error
-{
-    color: #ff0000;
-}
+/* colors : http://colorschemedesigner.com/#2a12bp691gpmd 
+    3A450F		343C13		2F3909		74852F		77853E
+*/
+* { margin: 0; padding: 0; }
+body { background-color: #ddd; font-family: "Cambria" , "Georgia" , "Times New Roman" ,serif; }
+#wrapper { width: 800px; margin: 0 auto; }
+#header, #footer { background-color: #2F3909; color: #eee; }
+#header { padding: 20px 10px; }
+#footer { padding: 10px; }
+#content { padding: 10px; background-color: #919878; }
+#logo { float: left; width: 500px; }
+#dashboard { float: right; }
 
-.field-validation-valid
-{
-    display: none;
-}
-
-.input-validation-error
-{
-    border: 1px solid #ff0000;
-    background-color: #ffeeee;
-}
-
-.validation-summary-errors
-{
-    font-weight: bold;
-    color: #ff0000;
-}
-
-.validation-summary-valid
-{
-    display: none;
-}
