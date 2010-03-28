@@ -102,11 +102,15 @@
     <Compile Include="Presentation\Controllers\HomeController.cs" />
     <Compile Include="Domain\Services\IPostRepository.cs" />
     <Compile Include="Domain\Entities\ISelectSpec.cs" />
+    <Compile Include="Presentation\ViewModels\IViewModel.cs" />
+    <Compile Include="Presentation\ViewModels\PostForm.cs" />
+    <Compile Include="Presentation\Controllers\PostsController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
     <Content Include="content\css\master.css" />
+    <Content Include="Views\home\webform.aspx" />
     <Content Include="Web.config" />
     <Content Include="content\js\jquery-1.4.1.js" />
     <Content Include="content\js\jquery-1.4.1.min.js" />
@@ -125,10 +129,12 @@
     <Content Include="Views\Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Views\Home\Index.spark" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Views\Shared\" />
+    <None Include="Views\home\index.spark" />
+    <None Include="Views\layouts\application.spark" />
+    <None Include="Views\posts\create.spark" />
+    <None Include="Views\posts\details.spark" />
+    <None Include="Views\posts\index.spark" />
+    <None Include="Views\shared\_global.spark" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v9.0\WebApplications\Microsoft.WebApplication.targets" />

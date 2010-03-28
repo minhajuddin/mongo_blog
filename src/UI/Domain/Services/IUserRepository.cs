@@ -1,6 +1,6 @@
 namespace MongoBlog.UI.Domain.Services {
     public interface IRepository {
-        void Add<T>(T entity);
+        void Create<T>(T entity);
         T Get<T>(object id);
     }
 }

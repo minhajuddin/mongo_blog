@@ -1,0 +1,8 @@
+<viewdata model='PostForm' />
+
+<form action='${CurrentUrl}' method='post'>
+<label for='Title'>Title</label><br />
+${Html.TextBoxFor(x => x.Title)}<br />
+${Html.TextAreaFor(x => x.Body)}<br />
+<input type='submit' value='Create Post' />
+</form>

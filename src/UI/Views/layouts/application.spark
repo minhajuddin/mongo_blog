@@ -1,0 +1,18 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<global title='"Mongo DB Blog"' type='string' />
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+    <title>${title}</title>
+</head>
+<body>
+	<div id='header'>
+		Mongo DB Blog
+	</div>
+    <div id='page'>
+		<use:view />
+    </div>
+    <div id='footer'>
+		Mongo DB Blog &copy; 2010
+	</div>
+</body>
+</html>

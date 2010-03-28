@@ -1,0 +1,5 @@
+<viewdata model='IEnumerable<Post>' />
+
+<div each='var post in Model'>
+	<p><a href='${Url.Action("Details", new { id = post.Id })}'>${post.Title}</a></p>
+</div>

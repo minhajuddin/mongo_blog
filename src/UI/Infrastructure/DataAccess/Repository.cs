@@ -15,7 +15,7 @@ namespace MongoBlog.UI.Infrastructure.DataAccess {
             return _mongoFactory.CreateInstance();
         }
 
-        public void Add<T>(T entity) {
+        public void Create<T>(T entity) {
             using (var mongo = Connection()) {
                 mongo.GetCollection<T>().Insert(entity);
             }
@@ -24,7 +24,9 @@ namespace MongoBlog.UI.Infrastructure.DataAccess {
 
         public T Get<T>(object id) {
             var provider = new MongoQueryProvider(_mongoFactory.CreateInstance());
-            return provider.DB.GetCollection<T>().FindOne(new { Id = id });
+            T entity = provider.DB.GetCollection<T>().FindOne(new { Id = id });
+            provider.Server.Dispose();
+            return entity;
         }
     }
 }

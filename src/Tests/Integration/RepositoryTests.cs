@@ -19,7 +19,7 @@ namespace MongoBlog.Tests.Integration {
                                CreatedOn = DateTime.Now
                            };
 
-            repo.Add(post);
+            repo.Create(post);
 
             Console.WriteLine(post.Id);
 
