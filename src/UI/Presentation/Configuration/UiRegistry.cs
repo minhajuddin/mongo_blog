@@ -1,7 +1,6 @@
-using System;
 using Cosmicvent.FluentAuthentication;
+using MongoBlog.UI.Presentation.Security;
 using StructureMap.Configuration.DSL;
-using MongoBlog.UI.Presentation.Controllers;
 
 
 namespace MongoBlog.UI.Presentation.Configuration {
@@ -15,21 +14,5 @@ namespace MongoBlog.UI.Presentation.Configuration {
 
         }
 
-    }
-
-    public class MongoBlogAuthenticationSettings : AuthenticationSettings {
-        public MongoBlogAuthenticationSettings()
-            : base(new RoleComparer()) {
-        }
-
-        protected override void Configure() {
-            AddRule<HomeController>();
-        }
-    }
-
-    public class RoleComparer : IRoleComparer {
-        public bool AreEqual(object firstRole, object secondRole) {
-            throw new NotImplementedException();
-        }
     }
 }

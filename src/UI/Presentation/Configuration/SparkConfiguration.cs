@@ -31,7 +31,7 @@ namespace MongoBlog.UI.Presentation.Configuration {
         private static void PrecompileViews(SparkViewFactory viewFactory) {
             var batch = new SparkBatchDescriptor();
             batch
-                .For<HomeController>();
+                .For<ApplicationController>();
             viewFactory.Precompile(batch);
         }
     }

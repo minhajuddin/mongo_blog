@@ -6,7 +6,10 @@
 </head>
 <body>
 	<div id='header'>
-		Mongo DB Blog
+		Mongo DB Blog | ${this.ViewContext.HttpContext.User.Identity.Name}
+	</div>
+	<div id='messages'>
+		${TempData["error"]}
 	</div>
     <div id='page'>
 		<use:view />

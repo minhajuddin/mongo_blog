@@ -1,0 +1,7 @@
+<viewdata model='LogonForm' />
+
+<form action='${CurrentUrl}' method='post'>
+UserName: ${Html.TextBoxFor(x => x.UserName)}<br />
+Password: ${Html.PasswordFor(x => x.Password)}<br />
+<input type='submit' value='Log On' />
+</form>
